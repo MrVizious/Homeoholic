@@ -38,19 +38,19 @@ public class Move : MonoBehaviour {
 		//TODO: Remove debugging logs
 		Debug.Log(gameObject.name + " tried to move up! ... Could it? " + CanMove(Vector2.up));
 		//TODO: Add logic
-		return true;
+		return CanMove(Vector2.up);
 	}
 	private bool MoveLeft() {
 		Debug.Log(gameObject.name + " tried to move left! ...Could it ? " + CanMove(Vector2.left));
-		return true;
+		return CanMove(Vector2.left);
 	}
 	private bool MoveDown() {
 		Debug.Log(gameObject.name + " tried to move down! ...Could it ? " + CanMove(Vector2.down));
-		return true;
+		return CanMove(Vector2.down);
 	}
 	private bool MoveRight() {
 		Debug.Log(gameObject.name + " tried to move right! ...Could it ? " + CanMove(Vector2.right));
-		return true;
+		return CanMove(Vector2.right);
 	}
 
 	private bool CanMove(Vector3 direction) {
