@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - Wall
+  - NPC
   layers:
   - Default
   - TransparentFX
@@ -16,14 +17,14 @@ TagManager:
   - 
   - 
   - Player
-  - Floor 0
+  - Floor
   - 
   - 
-  - Wall 0
-  - 
-  - 'Wall '
+  - Wall
   - 
   - 
+  - Element
+  - NPC
   - 
   - 
   - 
@@ -43,12 +44,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Floor 0
+  - name: Floor
     uniqueID: 3675420249
     locked: 0
-  - name: Wall 0
+  - name: Wall
     uniqueID: 1034875859
+    locked: 0
+  - name: Element
+    uniqueID: 2076490595
+    locked: 0
+  - name: NPC
+    uniqueID: 505225313
     locked: 0
   - name: Player
     uniqueID: 3008491767
+    locked: 0
+  - name: UI
+    uniqueID: 1269279061
     locked: 0

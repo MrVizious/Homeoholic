@@ -1,16 +1,96 @@
-﻿using System.Collections;
+﻿using System.Text.RegularExpressions;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Transform))]
 public class PlayerController : MonoBehaviour {
 
-	private void PerformActions(List<string> actions) {
+	[SerializeField]
+	private LevelController levelController;
+	[SerializeField]
+
+	/// <summary>
+	/// This function receives a List with the names 
+	/// </summary>
+	/// <param name="actions"></param>
+	public void StartActions(List<string> actions) {
 
 	}
 
 
-	private void PerformAction() {
+	/// <summary>
+	/// A coroutine that executes the actions given in a string of inputs.
+	/// </summary>
+	/// <remarks>
+	/// This coroutine goes one by one checking wether the input is a movement string or not. If it is,
+	/// the routine calls the movement action of the player. If it isn't, all of the elements in front,
+	/// behind and on the sides of the player are given the input so they can either use it or not, depending on
+	/// wether it is a valid input for them.
+	///</remarks> 
+	/// <param name="actions">A list of strings containing the inputs given by the player</param>
+	/// <returns></returns>
+	private IEnumerator PerformActions(List<string> actions) {
+		foreach (string current in actions) {
+			//If the action is a movement keys (WASD), the movement action is called
+			if (IsMovementKey(current)) {
+				GetComponent<Move>().PerformMove(current);
+			}
 
+			// If it is not a move action, a list of all the interactionable elements around is obtained, and their performAction methods are called
+			else {
+				List<Element> elementsAround = GetElementsAround();
+				//This variable checks if the player succesfully performed any action
+				bool actionPerformed = false;
+
+				foreach (Element element in elementsAround) {
+					//Two waits for the action to stop being performed, just in case
+					yield return new WaitUntil(() => !levelController.PerformingAction);
+					if (element.PerformAction(current)) actionPerformed = true;
+					yield return new WaitUntil(() => !levelController.PerformingAction);
+
+				}
+
+
+			}
+		}
+
+
+	}
+
+	private List<Element> GetElementsAround() {
+
+		List<Element> elementsAround = new List<Element>();
+
+		// Checking for elements up
+		//(W)
+		RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up);
+		Element up = hit.collider.gameObject.GetComponent<Element>();
+		if (up != null) elementsAround.Add(up);
+
+		// Checking for elements left
+		//(A)
+		hit = Physics2D.Raycast(transform.position, Vector2.left);
+		Element left = hit.collider.gameObject.GetComponent<Element>();
+		if (left != null) elementsAround.Add(left);
+
+		// Checking for elements down
+		//(S)
+		hit = Physics2D.Raycast(transform.position, Vector2.down);
+		Element down = hit.collider.gameObject.GetComponent<Element>();
+		if (down != null) elementsAround.Add(down);
+
+		// Checking for elements right
+		//(D)
+		hit = Physics2D.Raycast(transform.position, Vector2.right);
+		Element right = hit.collider.gameObject.GetComponent<Element>();
+		if (right != null) elementsAround.Add(right);
+
+		return elementsAround;
+
+	}
+
+	private bool IsMovementKey(string s) {
+		return Regex.IsMatch(s, @"^[wasdWASD]+$");
 	}
 }

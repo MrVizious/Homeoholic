@@ -5,27 +5,22 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour {
 
-
-	private bool doingActions;
-    
-	private void Start() {
-
-		doingActions = false;
-
-	}
-
+	[SerializeField]
+	private LevelController levelController;
 	public void Update() {
-		if (Input.anyKeyDown && !doingActions) {
+		if (!levelController.PerformingAction) {
+			if (Input.anyKeyDown) {
 
-			string inputKey = Input.inputString;
+				string inputKey = Input.inputString;
 
-			if (inputKey.Length == 1 && (ValidKey(inputKey) || inputKey.Equals(" "))) {
-				//TODO: Add letter
+				if (inputKey.Length == 1 && (ValidKey(inputKey) || inputKey.Equals(" "))) {
+					//TODO: Add letter
+				}
+
 			}
-
-		}
-		if (Input.GetKeyDown(KeyCode.Return)) {
-			//TODO: Start Actions Routine
+			if (Input.GetKeyDown(KeyCode.Return)) {
+				//TODO: Start Actions Routine
+			}
 		}
 		if (Input.GetKeyDown(KeyCode.Escape)) {
 			//TODO: Pause menu
@@ -34,6 +29,6 @@ public class InputController : MonoBehaviour {
 	}
 
 	private bool ValidKey(string s) {
-		return Regex.IsMatch(s, @"^[a-z]+$");
+		return Regex.IsMatch(s, @"^[a-zA-Z]+$");
 	}
 }
