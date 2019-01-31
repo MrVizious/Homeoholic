@@ -19,6 +19,6 @@
         "WrappingKeepStatementsOnSingleLine": true,
         "UseTabs": true,
         "TabSize": 4,
-        "SpaceAfterCast": false
+        "SpaceAfterCast": true
     }
 }

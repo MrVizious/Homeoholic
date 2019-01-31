@@ -32,12 +32,19 @@ public class PlayerController : MonoBehaviour {
 	/// <returns></returns>
 	private IEnumerator PerformActions(List<string> actions) {
 		foreach (string current in actions) {
+			//Wait in case something is still running
+			yield return new WaitUntil(() => !levelController.PerformingAction);
 			//If the action is a movement keys (WASD), the movement action is called
 			if (IsMovementKey(current)) {
 				GetComponent<Move>().PerformMove(current);
 			}
 
-			// If it is not a move action, a list of all the interactionable elements around is obtained, and their performAction methods are called
+			//If the action is a " " (spacebar), it means it is a pause
+			else if (current.Equals(" ")) {
+				// TODO: 
+			}
+
+			// If it is not a move actionor a pause, a list of all the interactionable elements around is obtained, and their performAction methods are called
 			else {
 				List<Element> elementsAround = GetElementsAround();
 				//This variable checks if the player succesfully performed any action
@@ -48,11 +55,14 @@ public class PlayerController : MonoBehaviour {
 					yield return new WaitUntil(() => !levelController.PerformingAction);
 					if (element.PerformAction(current)) actionPerformed = true;
 					yield return new WaitUntil(() => !levelController.PerformingAction);
-
 				}
 
-
+				if (!actionPerformed) {
+					//TODO: Start action of showing an interrogation or something to indicate that no action was performed
+				}
 			}
+			//Wait in case something is still running
+			yield return new WaitUntil(() => !levelController.PerformingAction);
 		}
 
 

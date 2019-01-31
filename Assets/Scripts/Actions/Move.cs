@@ -7,6 +7,7 @@ public class Move : MonoBehaviour {
 	[SerializeField]
 	private LevelController levelController;
 	private Vector2 target;
+	public bool debug;
 	public bool PerformMove(string s) {
 		switch (s) {
 			case "W":
@@ -22,7 +23,7 @@ public class Move : MonoBehaviour {
 			case "d":
 				return MoveRight();
 			default:
-				Debug.Log("A bad input was sent to PerformMove()", this);
+				if (debug) Debug.Log("A bad input was sent to PerformMove()", this);
 				return false;
 		}
 	}
@@ -36,20 +37,23 @@ public class Move : MonoBehaviour {
 	/// </remarks>   
 	private bool MoveUp() {
 		//TODO: Remove debugging logs
-		Debug.Log(gameObject.name + " tried to move up! ... Could it? " + CanMove(Vector2.up));
-		//TODO: Add logic
+		if (debug) Debug.Log(gameObject.name + " tried to move up! ... Could it? " + CanMove(Vector2.up));
+		target = (Vector2) transform.position + Vector2.up;
 		return CanMove(Vector2.up);
 	}
 	private bool MoveLeft() {
-		Debug.Log(gameObject.name + " tried to move left! ...Could it ? " + CanMove(Vector2.left));
+		if (debug) Debug.Log(gameObject.name + " tried to move left! ...Could it ? " + CanMove(Vector2.left));
+		target = (Vector2) transform.position + Vector2.left;
 		return CanMove(Vector2.left);
 	}
 	private bool MoveDown() {
-		Debug.Log(gameObject.name + " tried to move down! ...Could it ? " + CanMove(Vector2.down));
+		if (debug) Debug.Log(gameObject.name + " tried to move down! ...Could it ? " + CanMove(Vector2.down));
+		target = (Vector2) transform.position + Vector2.down;
 		return CanMove(Vector2.down);
 	}
 	private bool MoveRight() {
-		Debug.Log(gameObject.name + " tried to move right! ...Could it ? " + CanMove(Vector2.right));
+		if (debug) Debug.Log(gameObject.name + " tried to move right! ...Could it ? " + CanMove(Vector2.right));
+		target = (Vector2) transform.position + Vector2.right;
 		return CanMove(Vector2.right);
 	}
 

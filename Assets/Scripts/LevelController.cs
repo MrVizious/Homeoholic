@@ -5,5 +5,6 @@ using UnityEngine;
 public abstract class LevelController : MonoBehaviour {
 
 	public bool PerformingAction;
+	public int NumberOfActions;
 
 }
