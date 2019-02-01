@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour {
 	private IEnumerator PerformActions() {
 		foreach (string current in actions) {
 			//Wait in case something is still running
-			yield return new WaitUntil(() => levelController.PerformingAction == false);
+			yield return new WaitUntil(() => !levelController.PerformingAction);
 			//If the action is a movement keys (WASD), the movement action is called
 			if (IsMovementKey(current)) {
 				GetComponent<Move>().PerformMove(current);
@@ -68,21 +68,6 @@ public class PlayerController : MonoBehaviour {
 			yield return new WaitUntil(() => !levelController.PerformingAction);
 		}
 		actions.Clear();
-
-		// levelController.PerformingAction = true;
-		// Debug.Log("Waiting for castle to open... Press esc. Right now, PerformingAction is: " + levelController.PerformingAction);
-		// while (levelController.PerformingAction == true) {
-		// 	yield return new WaitForSeconds(0.05f);
-		// }
-		// levelController.PerformingAction = false;
-		// Debug.Log("The castle opened! Just shout for the princess to come out... . Right now, PerformingAction is: " + levelController.PerformingAction);
-
-		// levelController.PerformingAction = true;
-		// while (levelController.PerformingAction == true) {
-		// 	yield return new WaitForSeconds(0.05f);
-		// }
-		// Debug.Log("The preincess went out of the castle... Very well done");
-		// yield return null;
 	}
 
 	private List<Element> GetElementsAround() {
@@ -92,6 +77,7 @@ public class PlayerController : MonoBehaviour {
 		// Checking for elements up
 		//(W)
 		RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, 1f);
+		// FIXME: Fix bug that causes access to object "hit" to be null, giving an error
 		Element up = hit.collider.gameObject.GetComponent<Element>();
 		if (up != null) elementsAround.Add(up);
 

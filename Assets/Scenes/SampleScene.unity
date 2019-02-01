@@ -528,8 +528,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 275124789}
-  - component: {fileID: 275124788}
   - component: {fileID: 275124790}
+  - component: {fileID: 275124788}
+  - component: {fileID: 275124792}
   - component: {fileID: 275124791}
   m_Layer: 15
   m_Name: ElementTest
@@ -550,7 +551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8c9e4889e1d3b43b446e1dff714437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doesntHaveAction: 1
+  doesntHaveAction: 0
   debug: 1
 --- !u!4 &275124789
 Transform:
@@ -640,6 +641,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &275124792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275124787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 257e6c4912c449d4fb5c41ef7b34545a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionKey: c
+  levelController: {fileID: 195698899}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,7 +983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelController: {fileID: 195698899}
-  speed: 2
+  speed: 1
   debug: 1
   instantMovement: 0
 --- !u!1 &1142466467
