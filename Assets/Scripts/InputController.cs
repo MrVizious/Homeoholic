@@ -8,6 +8,8 @@ public class InputController : MonoBehaviour {
 
 	[SerializeField]
 	private LevelController levelController;
+	[SerializeField]
+	private PlayerController playerController;
 	private List<string> inputs;
 	public bool debug;
 
@@ -36,9 +38,11 @@ public class InputController : MonoBehaviour {
 
 					}
 				}
-				// if (Input.GetKeyDown(KeyCode.Return)) {
-				// 	// TODO: Start Actions Routine
-				// }
+				//Send inputs to PlayerController for it to start the actions
+				if (Input.GetKeyDown(KeyCode.Return) && inputs.Count == levelController.NumberOfActions) {
+					if (debug) Debug.Log("Calling StartActions from PlayerController");
+					playerController.StartActions(inputs);
+				}
 
 				if (Input.GetKeyDown(KeyCode.Backspace) && inputs.Count > 0) {
 					inputs.RemoveAt(inputs.Count - 1);
@@ -60,6 +64,13 @@ public class InputController : MonoBehaviour {
 			// TODO: Show Return button in UI if all the letters are full
 
 		}
+		// if (Input.GetKeyDown(KeyCode.Escape)) {
+		// 	// Just a debug thing
+		// 	if (debug) {
+		// 		levelController.PerformingAction = false;
+		// 		Debug.Log("ESC pressed!");
+		// 	}
+		// }
 	}
 
 	private bool ValidKey(string s) {

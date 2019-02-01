@@ -3,19 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Transform))]
 public class PlayerController : MonoBehaviour {
 
 	[SerializeField]
 	private LevelController levelController;
+
 	[SerializeField]
+	private List<string> actions;
+
 
 	/// <summary>
 	/// This function receives a List with the names 
 	/// </summary>
 	/// <param name="actions"></param>
-	public void StartActions(List<string> actions) {
-
+	public void StartActions(List<string> newActions) {
+		actions = newActions;
+		StartCoroutine("PerformActions");
 	}
 
 
@@ -30,10 +33,10 @@ public class PlayerController : MonoBehaviour {
 	///</remarks> 
 	/// <param name="actions">A list of strings containing the inputs given by the player</param>
 	/// <returns></returns>
-	private IEnumerator PerformActions(List<string> actions) {
+	private IEnumerator PerformActions() {
 		foreach (string current in actions) {
 			//Wait in case something is still running
-			yield return new WaitUntil(() => !levelController.PerformingAction);
+			yield return new WaitUntil(() => levelController.PerformingAction == false);
 			//If the action is a movement keys (WASD), the movement action is called
 			if (IsMovementKey(current)) {
 				GetComponent<Move>().PerformMove(current);
@@ -41,7 +44,7 @@ public class PlayerController : MonoBehaviour {
 
 			//If the action is a " " (spacebar), it means it is a pause
 			else if (current.Equals(" ")) {
-				// TODO: 
+				// TODO: Pause action
 			}
 
 			// If it is not a move actionor a pause, a list of all the interactionable elements around is obtained, and their performAction methods are called
@@ -64,8 +67,22 @@ public class PlayerController : MonoBehaviour {
 			//Wait in case something is still running
 			yield return new WaitUntil(() => !levelController.PerformingAction);
 		}
+		actions.Clear();
 
+		// levelController.PerformingAction = true;
+		// Debug.Log("Waiting for castle to open... Press esc. Right now, PerformingAction is: " + levelController.PerformingAction);
+		// while (levelController.PerformingAction == true) {
+		// 	yield return new WaitForSeconds(0.05f);
+		// }
+		// levelController.PerformingAction = false;
+		// Debug.Log("The castle opened! Just shout for the princess to come out... . Right now, PerformingAction is: " + levelController.PerformingAction);
 
+		// levelController.PerformingAction = true;
+		// while (levelController.PerformingAction == true) {
+		// 	yield return new WaitForSeconds(0.05f);
+		// }
+		// Debug.Log("The preincess went out of the castle... Very well done");
+		// yield return null;
 	}
 
 	private List<Element> GetElementsAround() {
@@ -74,25 +91,25 @@ public class PlayerController : MonoBehaviour {
 
 		// Checking for elements up
 		//(W)
-		RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up);
+		RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, 1f);
 		Element up = hit.collider.gameObject.GetComponent<Element>();
 		if (up != null) elementsAround.Add(up);
 
 		// Checking for elements left
 		//(A)
-		hit = Physics2D.Raycast(transform.position, Vector2.left);
+		hit = Physics2D.Raycast(transform.position, Vector2.left, 1f);
 		Element left = hit.collider.gameObject.GetComponent<Element>();
 		if (left != null) elementsAround.Add(left);
 
 		// Checking for elements down
 		//(S)
-		hit = Physics2D.Raycast(transform.position, Vector2.down);
+		hit = Physics2D.Raycast(transform.position, Vector2.down, 1f);
 		Element down = hit.collider.gameObject.GetComponent<Element>();
 		if (down != null) elementsAround.Add(down);
 
 		// Checking for elements right
 		//(D)
-		hit = Physics2D.Raycast(transform.position, Vector2.right);
+		hit = Physics2D.Raycast(transform.position, Vector2.right, 1f);
 		Element right = hit.collider.gameObject.GetComponent<Element>();
 		if (right != null) elementsAround.Add(right);
 
