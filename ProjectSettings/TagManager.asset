@@ -24,9 +24,9 @@ TagManager:
   - Wall
   - 
   - 
-  - Element
+  - ElementWithCollision
   - NPC
-  - 
+  - ElementWithoutCollision
   - 
   - 
   - 

@@ -10,8 +10,13 @@ public class PlayerController : MonoBehaviour {
 
 	[SerializeField]
 	private List<string> actions;
+	private int layerMask;
 	public bool debug;
 
+
+	private void Start() {
+		layerMask = 1 << LayerMask.NameToLayer("Player") | 1 << LayerMask.NameToLayer("Wall") | 1 << LayerMask.NameToLayer("ElementWithCollision") | 1 << LayerMask.NameToLayer("ElementWithoutCollision") | 1 << LayerMask.NameToLayer("NPC");
+	}
 
 	/// <summary>
 	/// This function receives a List with the names 
@@ -72,45 +77,40 @@ public class PlayerController : MonoBehaviour {
 			//Wait in case something is still running
 			yield return new WaitUntil(() => !levelController.PerformingAction);
 		}
+		// TODO: Decide whether to clear the inputs after executing it or not
 		actions.Clear();
 	}
 
 	private List<Element> GetElementsAround() {
 
 		List<Element> elementsAround = new List<Element>();
+		//This starts to Vector2.up just to avoid compilation problems
+		Vector2 directionVector = Vector2.up;
+		for (int i = 0; i < 4; i++) {
+			switch (i) {
+				case 0:
+					directionVector = Vector2.up;
+					break;
+				case 1:
+					directionVector = Vector2.left;
+					break;
+				case 2:
+					directionVector = Vector2.down;
+					break;
+				case 3:
+					directionVector = Vector2.right;
+					break;
+				default:
+					if (debug) Debug.Log("A wrong direction was sent to GetElementsAround in PLayerController", this);
+					break;
 
-		// Checking for elements up
-		//(W)
-		RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, 1f);
-		if (hit.collider != null) {
-			Element up = hit.collider.gameObject.GetComponent<Element>();
-			if (up != null) elementsAround.Add(up);
+			}
+			RaycastHit2D hit = Physics2D.Raycast(transform.position, directionVector, 1f, layerMask);
+			if (hit.collider != null) {
+				Element element = hit.collider.gameObject.GetComponent<Element>();
+				if (element != null) elementsAround.Add(element);
+			}
 		}
-
-		// Checking for elements left
-		//(A)
-		hit = Physics2D.Raycast(transform.position, Vector2.left, 1f);
-		if (hit.collider != null) {
-			Element left = hit.collider.gameObject.GetComponent<Element>();
-			if (left != null) elementsAround.Add(left);
-		}
-
-		// Checking for elements down
-		//(S)
-		hit = Physics2D.Raycast(transform.position, Vector2.down, 1f);
-		if (hit.collider != null) {
-			Element down = hit.collider.gameObject.GetComponent<Element>();
-			if (down != null) elementsAround.Add(down);
-		}
-
-		// Checking for elements right
-		//(D)
-		hit = Physics2D.Raycast(transform.position, Vector2.right, 1f);
-		if (hit.collider != null) {
-			Element right = hit.collider.gameObject.GetComponent<Element>();
-			if (right != null) elementsAround.Add(right);
-		}
-
 		return elementsAround;
 	}
 

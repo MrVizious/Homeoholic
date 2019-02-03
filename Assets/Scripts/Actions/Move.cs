@@ -7,24 +7,29 @@ public class Move : MonoBehaviour {
 	[SerializeField]
 	private LevelController levelController;
 	private Vector2 target;
+	private int layerMask;
 	[SerializeField]
 	private float speed;
 	public bool debug;
 	public bool instantMovement;
+
+	private void Start() {
+		layerMask = 1 << LayerMask.NameToLayer("Player") | 1 << LayerMask.NameToLayer("Wall") | 1 << LayerMask.NameToLayer("ElementWithCollision") | 1 << LayerMask.NameToLayer("NPC");
+	}
 	public bool PerformMove(string s) {
 		switch (s) {
 			case "W":
 			case "w":
-				return MoveUp();
+				return MoveInDirection(Vector2.up);
 			case "A":
 			case "a":
-				return MoveLeft();
+				return MoveInDirection(Vector2.left);
 			case "S":
 			case "s":
-				return MoveDown();
+				return MoveInDirection(Vector2.down);
 			case "D":
 			case "d":
-				return MoveRight();
+				return MoveInDirection(Vector2.right);
 			default:
 				if (debug) Debug.Log("A bad input was sent to PerformMove()", this);
 				return false;
@@ -32,70 +37,26 @@ public class Move : MonoBehaviour {
 	}
 
 	/// <summary>
-	/// The gameObject moves up if it is able to do so.true If not, it returns false.
+	/// The gameObject moves towards the direction of the input Vector if it is able to do so.true If not, it returns false.
 	/// </summary>
+	/// <param name="directionVector">Vector2 containing the direction of the movement.</param>   
 	/// <remarks>
 	/// First, the function calls the method <see cref="CanMove"/> to see if there is anything obstructing
 	/// it from moving. If it is false, the gameObject changes its target position to the wanted one.
-	/// </remarks>   
-	private bool MoveUp() {
-
-		//TODO: Change movement
-		if (debug) {
-			Debug.Log(gameObject.name + " tried to move up! ... Could it? " + CanMove(Vector2.up));
-			Debug.Log("Before moving up, PerformingAction was: " + levelController.PerformingAction);
-		}
-
-
-		if (CanMove(Vector2.up)) {
-			levelController.PerformingAction = true;
-			target = (Vector2) transform.position + Vector2.up;
-			if (instantMovement) transform.position = target;
-			return true;
-		}
-		levelController.PerformingAction = false;
-		return false;
-	}
-	private bool MoveLeft() {
+	/// After that, it turns PerformingAction to true.   
+	/// </remarks>
+	/// <returns>Returns true if it moved, false if it didn't.</returns>    
+	private bool MoveInDirection(Vector2 directionVector) {
 
 		if (debug) {
-			Debug.Log(gameObject.name + " tried to move left! ... Could it? " + CanMove(Vector2.left));
-			Debug.Log("Before moving left, PerformingAction was: " + levelController.PerformingAction);
+			Debug.Log(gameObject.name + " tried to move! ... Could it? " + CanMove(directionVector));
+			Debug.Log("Before moving, PerformingAction was: " + levelController.PerformingAction);
 		}
 
-		if (CanMove(Vector2.left)) {
-			levelController.PerformingAction = true;
-			target = (Vector2) transform.position + Vector2.left;
-			if (instantMovement) transform.position = target;
-			return true;
-		}
-		levelController.PerformingAction = false;
-		return false;
-	}
-	private bool MoveDown() {
-		if (debug) {
-			Debug.Log(gameObject.name + " tried to move down! ... Could it? " + CanMove(Vector2.down));
-			Debug.Log("Before moving down, PerformingAction was: " + levelController.PerformingAction);
-		}
 
-		if (CanMove(Vector2.down)) {
+		if (CanMove(directionVector)) {
 			levelController.PerformingAction = true;
-			target = (Vector2) transform.position + Vector2.down;
-			if (instantMovement) transform.position = target;
-			return true;
-		}
-		levelController.PerformingAction = false;
-		return false;
-	}
-	private bool MoveRight() {
-		if (debug) {
-			Debug.Log(gameObject.name + " tried to move right! ... Could it? " + CanMove(Vector2.right));
-			Debug.Log("Before moving right, PerformingAction was: " + levelController.PerformingAction);
-		}
-
-		if (CanMove(Vector2.right)) {
-			levelController.PerformingAction = true;
-			target = (Vector2) transform.position + Vector2.right;
+			target = (Vector2) transform.position + directionVector;
 			if (instantMovement) transform.position = target;
 			return true;
 		}
@@ -104,8 +65,13 @@ public class Move : MonoBehaviour {
 	}
 
 	//TODO: Avoid raycasting objects in layers that shouldn't interact with it
+	/// <summary>
+	/// Checks wether the movement in a certain direction is possible or there is an obstacle.
+	/// </summary>
+	/// <param name="direction"></param>
+	/// <returns></returns>
 	private bool CanMove(Vector3 direction) {
-		RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1f);
+		RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1f, layerMask);
 		if (hit.collider == null) {
 			return true;
 		}
@@ -119,6 +85,7 @@ public class Move : MonoBehaviour {
 			transform.position = target;
 		}
 
+		// Once the target is reached, the movement action is stopped, thus changing PerformingAction to False
 		if (transform.position.Equals(target)) {
 			if (levelController.PerformingAction) {
 				if (debug) Debug.Log("PerformingAction changed to false because " + name + " arrived to its target!", this);
