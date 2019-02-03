@@ -53,6 +53,7 @@ public class Move : MonoBehaviour {
 			if (instantMovement) transform.position = target;
 			return true;
 		}
+		levelController.PerformingAction = false;
 		return false;
 	}
 	private bool MoveLeft() {
@@ -68,6 +69,7 @@ public class Move : MonoBehaviour {
 			if (instantMovement) transform.position = target;
 			return true;
 		}
+		levelController.PerformingAction = false;
 		return false;
 	}
 	private bool MoveDown() {
@@ -82,6 +84,7 @@ public class Move : MonoBehaviour {
 			if (instantMovement) transform.position = target;
 			return true;
 		}
+		levelController.PerformingAction = false;
 		return false;
 	}
 	private bool MoveRight() {
@@ -96,6 +99,7 @@ public class Move : MonoBehaviour {
 			if (instantMovement) transform.position = target;
 			return true;
 		}
+		levelController.PerformingAction = false;
 		return false;
 	}
 

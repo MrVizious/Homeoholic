@@ -970,6 +970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelController: {fileID: 195698899}
   actions: []
+  debug: 1
 --- !u!114 &1036417726
 MonoBehaviour:
   m_ObjectHideFlags: 0

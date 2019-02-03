@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour {
 
 	[SerializeField]
 	private List<string> actions;
+	public bool debug;
 
 
 	/// <summary>
@@ -39,16 +40,19 @@ public class PlayerController : MonoBehaviour {
 			yield return new WaitUntil(() => !levelController.PerformingAction);
 			//If the action is a movement keys (WASD), the movement action is called
 			if (IsMovementKey(current)) {
-				GetComponent<Move>().PerformMove(current);
+				bool couldMove = GetComponent<Move>().PerformMove(current);
+				if (!couldMove && debug) Debug.Log("Couldn't move, an obstacle was found");
 			}
 
 			//If the action is a " " (spacebar), it means it is a pause
 			else if (current.Equals(" ")) {
 				// TODO: Pause action
+				if (debug) Debug.Log("Pause action performed");
 			}
 
 			// If it is not a move actionor a pause, a list of all the interactionable elements around is obtained, and their performAction methods are called
 			else {
+
 				List<Element> elementsAround = GetElementsAround();
 				//This variable checks if the player succesfully performed any action
 				bool actionPerformed = false;
@@ -62,6 +66,7 @@ public class PlayerController : MonoBehaviour {
 
 				if (!actionPerformed) {
 					//TODO: Start action of showing an interrogation or something to indicate that no action was performed
+					if (debug) Debug.Log("No element around with activation key " + current);
 				}
 			}
 			//Wait in case something is still running
@@ -77,30 +82,36 @@ public class PlayerController : MonoBehaviour {
 		// Checking for elements up
 		//(W)
 		RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, 1f);
-		// FIXME: Fix bug that causes access to object "hit" to be null, giving an error
-		Element up = hit.collider.gameObject.GetComponent<Element>();
-		if (up != null) elementsAround.Add(up);
+		if (hit.collider != null) {
+			Element up = hit.collider.gameObject.GetComponent<Element>();
+			if (up != null) elementsAround.Add(up);
+		}
 
 		// Checking for elements left
 		//(A)
 		hit = Physics2D.Raycast(transform.position, Vector2.left, 1f);
-		Element left = hit.collider.gameObject.GetComponent<Element>();
-		if (left != null) elementsAround.Add(left);
+		if (hit.collider != null) {
+			Element left = hit.collider.gameObject.GetComponent<Element>();
+			if (left != null) elementsAround.Add(left);
+		}
 
 		// Checking for elements down
 		//(S)
 		hit = Physics2D.Raycast(transform.position, Vector2.down, 1f);
-		Element down = hit.collider.gameObject.GetComponent<Element>();
-		if (down != null) elementsAround.Add(down);
+		if (hit.collider != null) {
+			Element down = hit.collider.gameObject.GetComponent<Element>();
+			if (down != null) elementsAround.Add(down);
+		}
 
 		// Checking for elements right
 		//(D)
 		hit = Physics2D.Raycast(transform.position, Vector2.right, 1f);
-		Element right = hit.collider.gameObject.GetComponent<Element>();
-		if (right != null) elementsAround.Add(right);
+		if (hit.collider != null) {
+			Element right = hit.collider.gameObject.GetComponent<Element>();
+			if (right != null) elementsAround.Add(right);
+		}
 
 		return elementsAround;
-
 	}
 
 	private bool IsMovementKey(string s) {
