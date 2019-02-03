@@ -64,7 +64,6 @@ public class Move : MonoBehaviour {
 		return false;
 	}
 
-	//TODO: Avoid raycasting objects in layers that shouldn't interact with it
 	/// <summary>
 	/// Checks wether the movement in a certain direction is possible or there is an obstacle.
 	/// </summary>

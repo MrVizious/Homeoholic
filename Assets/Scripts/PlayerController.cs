@@ -49,9 +49,9 @@ public class PlayerController : MonoBehaviour {
 				if (!couldMove && debug) Debug.Log("Couldn't move, an obstacle was found");
 			}
 
-			//If the action is a " " (spacebar), it means it is a pause
+			//If the action is a " " (spacebar), it means it is a stall
 			else if (current.Equals(" ")) {
-				// TODO: Pause action
+				// TODO: Stall action
 				if (debug) Debug.Log("Pause action performed");
 			}
 
