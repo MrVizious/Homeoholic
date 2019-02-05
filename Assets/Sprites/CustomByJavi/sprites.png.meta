@@ -27,6 +27,7 @@ TextureImporter:
     21300044: sprites_23
     21300046: sprites_24
     21300048: sprites_25
+    21300050: sprites_13
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -604,6 +605,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 6816389cf5b346c489668a75e5a4a16a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprites_13
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 542
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b08d7cae43bbf746a6467f1f881368d
       vertices: []
       indices: 
       edges: []
