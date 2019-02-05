@@ -57,9 +57,6 @@ public class InputController : MonoBehaviour {
 					// TODO: Show letter on screen
 				}
 			}
-			// if (Input.GetKeyDown(KeyCode.Escape)) {
-			// 	// TODO: Pause menu
-			// }
 
 			// TODO: Show Return button in UI if all the letters are full
 
