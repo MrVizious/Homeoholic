@@ -54,20 +54,13 @@ public class InputController : MonoBehaviour {
 						}
 						Debug.Log("Letter removed, current input list is: " + s);
 					}
-					// TODO: Show letter on screen
+					// TODO: Show inputted letter on screen
 				}
 			}
 
 			// TODO: Show Return button in UI if all the letters are full
 
 		}
-		// if (Input.GetKeyDown(KeyCode.Escape)) {
-		// 	// Just a debug thing
-		// 	if (debug) {
-		// 		levelController.PerformingAction = false;
-		// 		Debug.Log("ESC pressed!");
-		// 	}
-		// }
 	}
 
 	private bool ValidKey(string s) {
