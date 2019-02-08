@@ -47,7 +47,7 @@ Here there will be listed all the things that have to be done not necessarily in
 
 ## Code
 Ok, so you don't know what to code? Look in here, it should help you find something cool to do ;)
-- [ ] Pause Menu
+- [x] Pause Menu
 - [ ] Start Menu
 - [ ] Letters UI
   - [ ] LetterHolders appear automatically with correct size
