@@ -50,11 +50,12 @@ Ok, so you don't know what to code? Look in here, it should help you find someth
 - [x] Pause Menu
 - [ ] Start Menu
 - [ ] Letters UI
-  - [ ] LetterHolders appear automatically with correct size
-  - [ ] Letters appear when pressed
+  - [x] LetterHolders appear automatically with correct size
+  - [x] Letters appear when pressed
   - [ ] Letters are highlighted while performing
   - [ ] Letters disappear or turn dark when performed
   - [ ] Icon appears to ask the user to press Enter / Return
+  - [ ] ¿¿ Create drag and drop system for fonts instead of loading them from Resources ??
 - [ ] Stall character action
 - [ ] No action performed visual feedback (Show a "?" on the head)
 - [ ] NPC prefab
@@ -62,7 +63,9 @@ Ok, so you don't know what to code? Look in here, it should help you find someth
   - [ ] Appear when collecting item
 
 ## Bugs
-None right now... It will be full soon, though.
+~~None right now... It will be full soon, though.~~
+Okay, here are these little bastards... Let's get rid of them:
+- [ ] Once you pause the game, you can still input keys for the character to move
 
 ## Ideas / Backlog
 Everybody can dream... Right? Here are some ideas that could or could not be implemented, but it sure is cool to have some kind of list to write down those ideas you have at 3 AM.

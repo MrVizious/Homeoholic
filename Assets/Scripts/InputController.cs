@@ -10,6 +10,8 @@ public class InputController : MonoBehaviour {
 	private LevelController levelController;
 	[SerializeField]
 	private PlayerController playerController;
+	[SerializeField]
+	private InputVisualizer inputVisualizer;
 	private List<string> inputs;
 	public bool debug;
 
@@ -18,13 +20,16 @@ public class InputController : MonoBehaviour {
 	}
 
 	public void Update() {
+		// TODO: Check that the game is not paused
 		if (!levelController.PerformingAction) {
 			if (Input.anyKeyDown) {
-
-				string inputKey = Input.inputString;
-
+				// Key that has been pressed in the last frame
+				string inputKey = Input.inputString.ToUpper();
+				// If the input is valid as an action key and the number of inputs isn't more than allowed
 				if (inputKey.Length == 1 && (ValidKey(inputKey) || inputKey.Equals(" ")) && inputs.Count < levelController.NumberOfActions) {
+
 					inputs.Add(inputKey);
+					inputVisualizer.AddLetter(inputKey);
 					if (debug) {
 
 						Debug.Log("Input *" + inputKey + "* was added to the list");
@@ -54,7 +59,7 @@ public class InputController : MonoBehaviour {
 						}
 						Debug.Log("Letter removed, current input list is: " + s);
 					}
-					// TODO: Show inputted letter on screen
+
 				}
 			}
 
@@ -64,6 +69,6 @@ public class InputController : MonoBehaviour {
 	}
 
 	private bool ValidKey(string s) {
-		return Regex.IsMatch(s, @"^[a-zA-Z]+$");
+		return Regex.IsMatch(s, @"^[A-ZÑ]+$");
 	}
 }
