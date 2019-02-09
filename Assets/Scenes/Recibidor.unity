@@ -2009,6 +2009,11 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8163302360773575671, guid: 224c452fcbb4b274187e8386f04808bb,
+        type: 3}
+      propertyPath: doesntHaveAction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5821799908864971038, guid: 224c452fcbb4b274187e8386f04808bb,
         type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
@@ -2702,6 +2707,7 @@ MonoBehaviour:
   levelController: {fileID: 315619414494361723}
   playerController: {fileID: 1553832830}
   inputVisualizer: {fileID: 1696108100}
+  pauseMenuController: {fileID: 218920369}
   debug: 1
 --- !u!4 &315619412952882539
 Transform:

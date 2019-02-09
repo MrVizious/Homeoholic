@@ -79,6 +79,11 @@ public class InputVisualizer : MonoBehaviour {
 
 	}
 
+	public void DeleteLetter() {
+		currentLetter--;
+		letterHolders[currentLetter].GetComponentInChildren<LetterManager>().DeleteLetter();
+	}
+
 
 
 	private Sprite SelectLetter(string letter) {

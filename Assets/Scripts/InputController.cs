@@ -12,6 +12,8 @@ public class InputController : MonoBehaviour {
 	private PlayerController playerController;
 	[SerializeField]
 	private InputVisualizer inputVisualizer;
+	[SerializeField]
+	private PauseMenuController pauseMenuController;
 	private List<string> inputs;
 	public bool debug;
 
@@ -20,8 +22,7 @@ public class InputController : MonoBehaviour {
 	}
 
 	public void Update() {
-		// TODO: Check that the game is not paused
-		if (!levelController.PerformingAction) {
+		if (!levelController.PerformingAction && !pauseMenuController.IsGamePaused()) {
 			if (Input.anyKeyDown) {
 				// Key that has been pressed in the last frame
 				string inputKey = Input.inputString.ToUpper();
@@ -51,6 +52,7 @@ public class InputController : MonoBehaviour {
 
 				if (Input.GetKeyDown(KeyCode.Backspace) && inputs.Count > 0) {
 					inputs.RemoveAt(inputs.Count - 1);
+					inputVisualizer.DeleteLetter();
 
 					if (debug) {
 						string s = "";

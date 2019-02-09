@@ -13,7 +13,8 @@ public class Element : MonoBehaviour {
 	}
 
 	public bool PerformAction(string s) {
-		return action.PerformAction(s);
+		if (!doesntHaveAction) return action.PerformAction(s);
+		return false;
 	}
 
 

@@ -18,4 +18,11 @@ public class LetterManager : MonoBehaviour {
 		tempColor.a = 1f;
 		image.color = tempColor;
 	}
+
+	public void DeleteLetter() {
+		image.sprite = null;
+		Color tempColor = image.color;
+		tempColor.a = 0f;
+		image.color = tempColor;
+	}
 }
