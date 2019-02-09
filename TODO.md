@@ -52,6 +52,7 @@ Ok, so you don't know what to code? Look in here, it should help you find someth
 - [ ] Letters UI
   - [x] LetterHolders appear automatically with correct size
   - [x] Letters appear when pressed
+  - [ ] Letters disappear when erased
   - [ ] Letters are highlighted while performing
   - [ ] Letters disappear or turn dark when performed
   - [ ] Icon appears to ask the user to press Enter / Return
