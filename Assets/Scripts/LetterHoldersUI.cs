@@ -16,12 +16,14 @@ public class LetterHoldersUI : MonoBehaviour {
 	[SerializeField]
 	private GameObject letterHolderPrefab;
 	public LevelController levelController;
+	private List<GameObject> letterHolders;
 
 	private void Start() {
 
 		//Getting the components
 		rectTransform = GetComponent<RectTransform>();
 		gridLayoutGroup = GetComponent<GridLayoutGroup>();
+		letterHolders = new List<GameObject>();
 
 		setInitialSize();
 		setChildren();
@@ -45,7 +47,10 @@ public class LetterHoldersUI : MonoBehaviour {
 	/// This method populates the array of children with the prefab that is used for the letterholders
 	/// </summary>
 	private void setChildren() {
-		// TODO: Populate and create an array of children for future use
+		for (int i = 0; i < levelController.NumberOfActions; i++) {
+			// The letter holder is instantiated and added to the list
+			letterHolders.Add(Instantiate(letterHolderPrefab, this.transform));
+		}
 	}
 
 	// TODO: Method that changes color of the current letter being executed
