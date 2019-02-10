@@ -71,12 +71,10 @@ public class InputVisualizer : MonoBehaviour {
 	/// <summary>
 	/// Goes to the next letter to fill and passes it the letter
 	/// </summary>
-	/// <param name="newLetter"></param>
+	/// <param name="newLetter">String with the letter to be added</param>
 	public void AddLetter(string newLetter) {
-
 		letterHolders[currentLetter].GetComponentInChildren<LetterManager>().SetLetter(SelectLetter(newLetter));
 		currentLetter++;
-
 	}
 
 	public void DeleteLetter() {
@@ -117,5 +115,18 @@ public class InputVisualizer : MonoBehaviour {
 			}
 		}
 		return null;
+	}
+
+	public void HighlightLetter(int i) {
+		letterHolders[i].GetComponent<Image>().color = new Color(0.5f, 0.15f, 0.5f, 1f);
+	}
+
+	public void StopHighlightLetter(int i) {
+		letterHolders[i].GetComponent<Image>().color = new Color(0.0943f, 0.0943f, 0.0943f, 1f);
+	}
+	public void DeHighlightLetter(int i) {
+		Color tempColor = letterHolders[i].GetComponentsInChildren<Image>()[1].color;
+		tempColor.a = 0.4f;
+		letterHolders[i].GetComponentsInChildren<Image>()[1].color = tempColor;
 	}
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4808987365316922353}
   - component: {fileID: 4003586501287553882}
   m_Layer: 5
-  m_Name: LetterSprite
+  m_Name: LetterImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}
+  m_Color: {r: 0.0943, g: 0.0943, b: 0.0943, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

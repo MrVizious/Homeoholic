@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour {
 
 	[SerializeField]
 	private List<string> actions;
+	[SerializeField]
+	private InputVisualizer inputVisualizer;
 	private int layerMask;
 	public bool debug;
 
@@ -40,27 +42,32 @@ public class PlayerController : MonoBehaviour {
 	/// <param name="actions">A list of strings containing the inputs given by the player</param>
 	/// <returns></returns>
 	private IEnumerator PerformActions() {
+		int i = 0;
 		foreach (string current in actions) {
+			bool actionPerformed = false;
+			inputVisualizer.HighlightLetter(i);
+
 			//Wait in case something is still running
 			yield return new WaitUntil(() => !levelController.PerformingAction);
 			//If the action is a movement keys (WASD), the movement action is called
 			if (IsMovementKey(current)) {
-				bool couldMove = GetComponent<Move>().PerformMove(current);
-				if (!couldMove && debug) Debug.Log("Couldn't move, an obstacle was found");
+				actionPerformed = GetComponent<Move>().PerformMove(current);
+				if (!actionPerformed && debug) Debug.Log("Couldn't move, an obstacle was found");
 			}
 
 			//If the action is a " " (spacebar), it means it is a stall
 			else if (current.Equals(" ")) {
 				// TODO: Stall action
+				actionPerformed = true;
 				if (debug) Debug.Log("Pause action performed");
 			}
 
-			// If it is not a move actionor a pause, a list of all the interactionable elements around is obtained, and their performAction methods are called
+			// If it is not a move action or a pause, a list of all the interactionable elements around is obtained, and their performAction methods are called
 			else {
 
 				List<Element> elementsAround = GetElementsAround();
 				//This variable checks if the player succesfully performed any action
-				bool actionPerformed = false;
+
 
 				foreach (Element element in elementsAround) {
 					//Two waits for the action to stop being performed, just in case
@@ -74,8 +81,18 @@ public class PlayerController : MonoBehaviour {
 					if (debug) Debug.Log("No element around with activation key " + current);
 				}
 			}
+			if (!actionPerformed) {
+				// TODO: No action performed interrogation sign
+				yield return new WaitForSeconds(1f);
+				if (debug) Debug.Log("No action could be performed!");
+			}
+
 			//Wait in case something is still running
 			yield return new WaitUntil(() => !levelController.PerformingAction);
+			inputVisualizer.StopHighlightLetter(i);
+			inputVisualizer.DeHighlightLetter(i);
+
+			i++;
 		}
 		// TODO: Decide whether to clear the inputs after executing it or not
 		actions.Clear();
