@@ -57,7 +57,9 @@ public class PlayerController : MonoBehaviour {
 
 			//If the action is a " " (spacebar), it means it is a stall
 			else if (current.Equals(" ")) {
-				// TODO: Stall action
+                transform.Find("Stall Sign").gameObject.SetActive(true);
+                yield return new WaitForSeconds(1f);
+                transform.Find("Stall Sign").gameObject.SetActive(false);
 				actionPerformed = true;
 				if (debug) Debug.Log("Pause action performed");
 			}
@@ -82,8 +84,9 @@ public class PlayerController : MonoBehaviour {
 				}
 			}
 			if (!actionPerformed) {
-				// TODO: No action performed interrogation sign
-				yield return new WaitForSeconds(1f);
+				transform.Find("? Sign").gameObject.SetActive(true);
+                yield return new WaitForSeconds(1f);
+                transform.Find("? Sign").gameObject.SetActive(false);
 				if (debug) Debug.Log("No action could be performed!");
 			}
 

@@ -57,8 +57,8 @@ Ok, so you don't know what to code? Look in here, it should help you find someth
   - [x] Letters disappear or turn dark when performed
   - [ ] Icon appears to ask the user to press Enter / Return
   - [ ] ¿¿ Create drag and drop system for fonts instead of loading them from Resources ??
-- [ ] Stall character action
-- [ ] No action performed visual feedback (Show a "?" on the head)
+- [x] Stall character action
+- [x] No action performed visual feedback (Show a "?" on the head)
 - [ ] NPC prefab
 - [ ] Inventory-like UI
   - [ ] Appear when collecting item
