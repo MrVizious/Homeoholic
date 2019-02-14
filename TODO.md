@@ -62,6 +62,7 @@ Ok, so you don't know what to code? Look in here, it should help you find someth
 - [ ] NPC prefab
 - [ ] Inventory-like UI
   - [ ] Appear when collecting item
+- [ ] **Pass all references to Scripts through LevelController** (Create all of the references in LevelController and make public methods to get the reference)
 
 ## Bugs
 ~~None right now... It will be full soon, though.~~  
