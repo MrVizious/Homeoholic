@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System.Globalization;
+using System.Runtime.CompilerServices;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +16,8 @@ public class Move : MonoBehaviour {
 	public bool instantMovement;
 
 	private void Start() {
-		layerMask = 1 << LayerMask.NameToLayer("Player") | 1 << LayerMask.NameToLayer("Wall") | 1 << LayerMask.NameToLayer("ElementWithCollision") | 1 << LayerMask.NameToLayer("NPC");
+		layerMask = 1 << LayerMask.NameToLayer("Wall") | 1 << LayerMask.NameToLayer("ElementWithCollision") | 1 << LayerMask.NameToLayer("NPC");
+        target = this.transform.position;
 	}
 	public bool PerformMove(string s) {
 		switch (s) {
@@ -74,6 +77,7 @@ public class Move : MonoBehaviour {
 		if (hit.collider == null) {
 			return true;
 		}
+        if(debug) Debug.Log("Obstacle found! Name of the obstacle: " + hit.collider.gameObject, this);
 		return false;
 	}
 

@@ -1,7 +1,40 @@
 fileFormatVersion: 2
 guid: f9484e4b1f9dc804daa535836556b9e8
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: LetterBubblesSprites_0
+    21300002: LetterBubblesSprites_1
+    21300004: LetterBubblesSprites_2
+    21300006: LetterBubblesSprites_3
+    21300008: LetterBubblesSprites_4
+    21300010: LetterBubblesSprites_5
+    21300012: LetterBubblesSprites_6
+    21300014: LetterBubblesSprites_7
+    21300016: LetterBubblesSprites_8
+    21300018: LetterBubblesSprites_9
+    21300020: LetterBubblesSprites_10
+    21300022: LetterBubblesSprites_11
+    21300024: LetterBubblesSprites_12
+    21300026: LetterBubblesSprites_13
+    21300028: LetterBubblesSprites_14
+    21300030: LetterBubblesSprites_15
+    21300032: LetterBubblesSprites_16
+    21300034: LetterBubblesSprites_17
+    21300036: LetterBubblesSprites_18
+    21300038: LetterBubblesSprites_19
+    21300040: LetterBubblesSprites_20
+    21300042: LetterBubblesSprites_21
+    21300044: LetterBubblesSprites_22
+    21300046: LetterBubblesSprites_24
+    21300048: LetterBubblesSprites_25
+    21300050: LetterBubblesSprites_26
+    21300052: LetterBubblesSprites_27
+    21300054: LetterBubblesSprites_28
+    21300056: LetterBubblesSprites_29
+    21300058: LetterBubblesSprites_30
+    21300060: LetterBubblesSprites_31
+    21300062: LetterBubblesSprites_32
+    21300064: LetterBubblesSprites_34
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -40,7 +73,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,9 +102,680 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: LetterBubblesSprites_0
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1626
+        width: 206
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c321ae8f47c3d444a8d882eae46f15e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_1
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 1626
+        width: 204
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de1b62e429aa33a448db7fbbd6c44474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_2
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 1626
+        width: 203
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8df888e720d18d0488ffebf3979dbf2c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_3
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 1626
+        width: 204
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86bdf196b38ad0c47bcd0ecdab94b1f1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_4
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 1623
+        width: 207
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62ac35ee5c4ecab48b46f62e3aba5f0f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_5
+      rect:
+        serializedVersion: 2
+        x: 1823
+        y: 1623
+        width: 226
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d2dda25e8820c42bbc82cb108c075e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_6
+      rect:
+        serializedVersion: 2
+        x: 2127
+        y: 1626
+        width: 202
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41c9217be8a3cfb4b9cdf41efc99578e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_7
+      rect:
+        serializedVersion: 2
+        x: 2420
+        y: 1626
+        width: 203
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7964986b0d95e284d80b5b8453f38878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_8
+      rect:
+        serializedVersion: 2
+        x: 2706
+        y: 1626
+        width: 203
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cf26fd9482b74e49a7a717274f807cc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_9
+      rect:
+        serializedVersion: 2
+        x: 3005
+        y: 1624
+        width: 204
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df4fbab3e50ddeb4b86bab9ee01cc385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_10
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 1328
+        width: 205
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df9ca12763c526f4db2bf932cd2bcdfa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_11
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 1328
+        width: 204
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 238933aa363d2624fb3c4313ee0a794f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_12
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 1328
+        width: 203
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c50d9a8d8f032441b40fa03ea2719be
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_13
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 1328
+        width: 204
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c100508087077c40bd6c8cba0259a23
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_14
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 1328
+        width: 206
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 008ff2b7744ccdc40b58e83a0a65669c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_15
+      rect:
+        serializedVersion: 2
+        x: 1827
+        y: 1328
+        width: 221
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b001c909547a7343adcb655d674cc66
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_16
+      rect:
+        serializedVersion: 2
+        x: 2127
+        y: 1328
+        width: 202
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88bbd07db6312de469b03bffef317194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_17
+      rect:
+        serializedVersion: 2
+        x: 2420
+        y: 1328
+        width: 203
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e71d6ab1d0f74094d9cea66367d51b8f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_18
+      rect:
+        serializedVersion: 2
+        x: 2706
+        y: 1328
+        width: 203
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d06ac3b7f7bff95499e1b6afd4d61285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_19
+      rect:
+        serializedVersion: 2
+        x: 3005
+        y: 1328
+        width: 204
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23a117eb38c44f847bef88e95f16e925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_20
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 778
+        width: 231
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1383df3e23aea084dabd8355d964d036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_21
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 1028
+        width: 204
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a9b03830bbc888478f981f3c87cbf9b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_22
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 1028
+        width: 204
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85eda587eb5655a479440c49e58f6622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_24
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 1028
+        width: 204
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa82aa32eef3b0d4db079f45b4cf7397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_25
+      rect:
+        serializedVersion: 2
+        x: 1267
+        y: 1025
+        width: 204
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb48a244bf9bcef419481fbf6077015e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_26
+      rect:
+        serializedVersion: 2
+        x: 1549
+        y: 1027
+        width: 208
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66eaf9dfe455e55419fa88c2fa66e185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_27
+      rect:
+        serializedVersion: 2
+        x: 1837
+        y: 1027
+        width: 219
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70b3357041cc9f54dadda524f5f143ca
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_28
+      rect:
+        serializedVersion: 2
+        x: 2137
+        y: 1022
+        width: 202
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8cec678e4e40724cbf2eb9aa6e6392e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_29
+      rect:
+        serializedVersion: 2
+        x: 2430
+        y: 1025
+        width: 204
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eda7b08d4720d234aba21dd225aec44e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_30
+      rect:
+        serializedVersion: 2
+        x: 2713
+        y: 1028
+        width: 207
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eaa7f2fbcad8224fb234cfe86f3e172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_31
+      rect:
+        serializedVersion: 2
+        x: 2993
+        y: 1019
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e95e37f2207fe5418d058e530620a07
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_32
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 780
+        width: 202
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046acb9d1c730e34d9c85182e5e16709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LetterBubblesSprites_34
+      rect:
+        serializedVersion: 2
+        x: 1268
+        y: 739
+        width: 204
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8710266a0b7e0104da3492f2b1fff501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

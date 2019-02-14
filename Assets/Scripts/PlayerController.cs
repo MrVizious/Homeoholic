@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
 
 
 	private void Start() {
-		layerMask = 1 << LayerMask.NameToLayer("Player") | 1 << LayerMask.NameToLayer("Wall") | 1 << LayerMask.NameToLayer("ElementWithCollision") | 1 << LayerMask.NameToLayer("ElementWithoutCollision") | 1 << LayerMask.NameToLayer("NPC");
+		layerMask = 1 << LayerMask.NameToLayer("Wall") | 1 << LayerMask.NameToLayer("ElementWithCollision") | 1 << LayerMask.NameToLayer("ElementWithoutCollision") | 1 << LayerMask.NameToLayer("NPC");
 	}
 
 	/// <summary>
