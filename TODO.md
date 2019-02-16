@@ -69,7 +69,7 @@ Ok, so you don't know what to code? Look in here, it should help you find someth
 Okay, here are these little bastards... Let's get rid of them:
 - [x] ~~Once you pause the game, you can still input keys for the character to move~~
 - [x] ~~The player doesn-t move if it has a collider activated. The Move Collider finds it and ignores the LayerMask~~
-- [ ] The resume button doesn't work in the pause menu
+- [x] ~~The resume button doesn't work in the pause menu~~
 
 ## Ideas / Backlog
 Everybody can dream... Right? Here are some ideas that could or could not be implemented, but it sure is cool to have some kind of list to write down those ideas you have at 3 AM.

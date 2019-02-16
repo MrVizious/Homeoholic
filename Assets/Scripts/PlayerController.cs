@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
 	public bool debug;
 
 
+
 	private void Start() {
 		layerMask = 1 << LayerMask.NameToLayer("Wall") | 1 << LayerMask.NameToLayer("ElementWithCollision") | 1 << LayerMask.NameToLayer("ElementWithoutCollision") | 1 << LayerMask.NameToLayer("NPC");
 		inputVisualizer = levelController.getInputVisualizer();
