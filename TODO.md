@@ -48,7 +48,7 @@ Here there will be listed all the things that have to be done not necessarily in
 ## Code
 Ok, so you don't know what to code? Look in here, it should help you find something cool to do ;)
 - [x] Pause Menu
-- [ ] Start Menu
+- [ ] Start Menu 
 - [ ] Letters UI
   - [x] LetterHolders appear automatically with correct size
   - [x] Letters appear when pressed
@@ -62,13 +62,14 @@ Ok, so you don't know what to code? Look in here, it should help you find someth
 - [ ] NPC prefab
 - [ ] Inventory-like UI
   - [ ] Appear when collecting item
-- [ ] **Pass all references to Scripts through LevelController** (Create all of the references in LevelController and make public methods to get the reference)
+- [x] **Pass all references to Scripts through LevelController** (Create all of the references in LevelController and make public methods to get the reference)
 
 ## Bugs
 ~~None right now... It will be full soon, though.~~  
 Okay, here are these little bastards... Let's get rid of them:
 - [x] ~~Once you pause the game, you can still input keys for the character to move~~
 - [x] ~~The player doesn-t move if it has a collider activated. The Move Collider finds it and ignores the LayerMask~~
+- [ ] The resume button doesn't work in the pause menu
 
 ## Ideas / Backlog
 Everybody can dream... Right? Here are some ideas that could or could not be implemented, but it sure is cool to have some kind of list to write down those ideas you have at 3 AM.

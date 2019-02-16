@@ -7,17 +7,15 @@ public class PlayerController : MonoBehaviour {
 
 	[SerializeField]
 	private LevelController levelController;
-
-	[SerializeField]
-	private List<string> actions;
-	[SerializeField]
 	private InputVisualizer inputVisualizer;
+	private List<string> actions;
 	private int layerMask;
 	public bool debug;
 
 
 	private void Start() {
 		layerMask = 1 << LayerMask.NameToLayer("Wall") | 1 << LayerMask.NameToLayer("ElementWithCollision") | 1 << LayerMask.NameToLayer("ElementWithoutCollision") | 1 << LayerMask.NameToLayer("NPC");
+		inputVisualizer = levelController.getInputVisualizer();
 	}
 
 	/// <summary>
@@ -57,9 +55,9 @@ public class PlayerController : MonoBehaviour {
 
 			//If the action is a " " (spacebar), it means it is a stall
 			else if (current.Equals(" ")) {
-                transform.Find("Stall Sign").gameObject.SetActive(true);
-                yield return new WaitForSeconds(1f);
-                transform.Find("Stall Sign").gameObject.SetActive(false);
+				transform.Find("Stall Sign").gameObject.SetActive(true);
+				yield return new WaitForSeconds(1f);
+				transform.Find("Stall Sign").gameObject.SetActive(false);
 				actionPerformed = true;
 				if (debug) Debug.Log("Pause action performed");
 			}
@@ -77,16 +75,11 @@ public class PlayerController : MonoBehaviour {
 					if (element.PerformAction(current)) actionPerformed = true;
 					yield return new WaitUntil(() => !levelController.PerformingAction);
 				}
-
-				if (!actionPerformed) {
-					//TODO: Start action of showing an interrogation or something to indicate that no action was performed
-					if (debug) Debug.Log("No element around with activation key " + current);
-				}
 			}
 			if (!actionPerformed) {
 				transform.Find("? Sign").gameObject.SetActive(true);
-                yield return new WaitForSeconds(1f);
-                transform.Find("? Sign").gameObject.SetActive(false);
+				yield return new WaitForSeconds(1f);
+				transform.Find("? Sign").gameObject.SetActive(false);
 				if (debug) Debug.Log("No action could be performed!");
 			}
 

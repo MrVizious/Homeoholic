@@ -8,17 +8,17 @@ public class InputController : MonoBehaviour {
 
 	[SerializeField]
 	private LevelController levelController;
-	[SerializeField]
 	private PlayerController playerController;
-	[SerializeField]
 	private InputVisualizer inputVisualizer;
-	[SerializeField]
 	private PauseMenuController pauseMenuController;
 	private List<string> inputs;
 	public bool debug;
 
 	private void Start() {
 		inputs = new List<string>();
+		playerController = levelController.getPlayerController();
+		inputVisualizer = levelController.getInputVisualizer();
+		pauseMenuController = levelController.getPauseMenuController();
 	}
 
 	public void Update() {

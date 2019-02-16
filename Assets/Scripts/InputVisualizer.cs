@@ -11,11 +11,12 @@ using UnityEngine.UI;
 [RequireComponent(typeof(GridLayoutGroup))]
 public class InputVisualizer : MonoBehaviour {
 
-	private GridLayoutGroup gridLayoutGroup;
-	private RectTransform rectTransform;
+	[SerializeField]
+	private LevelController levelController;
 	[SerializeField]
 	private GameObject letterHolderPrefab;
-	public LevelController levelController;
+	private GridLayoutGroup gridLayoutGroup;
+	private RectTransform rectTransform;
 	private List<GameObject> letterHolders;
 	private Sprite[] sprites;
 	private int currentLetter;
@@ -66,8 +67,6 @@ public class InputVisualizer : MonoBehaviour {
 		sprites = Resources.LoadAll<Sprite>("Letters/");
 	}
 
-	// TODO: Method that changes color of the current letter being executed
-
 	/// <summary>
 	/// Goes to the next letter to fill and passes it the letter
 	/// </summary>
@@ -81,8 +80,6 @@ public class InputVisualizer : MonoBehaviour {
 		currentLetter--;
 		letterHolders[currentLetter].GetComponentInChildren<LetterManager>().DeleteLetter();
 	}
-
-
 
 	private Sprite SelectLetter(string letter) {
 		string spriteName = "LettersSprites_";

@@ -529,7 +529,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 218920369}
+      - m_Target: {fileID: 0}
         m_MethodName: ResumeGame
         m_Mode: 1
         m_Arguments:
@@ -1617,7 +1617,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 218920369}
+      - m_Target: {fileID: 0}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -1890,9 +1890,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12156eff12973d42b2746e55db5eaae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelController: {fileID: 315619414494361723}
   letterHolderPrefab: {fileID: 6809572406860590783, guid: f03a286654225cc4691471a63af2b5df,
     type: 3}
-  levelController: {fileID: 315619414494361723}
 --- !u!114 &1696108101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2854,9 +2854,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelController: {fileID: 315619414494361723}
-  playerController: {fileID: 1553832830}
-  inputVisualizer: {fileID: 1696108100}
-  pauseMenuController: {fileID: 218920369}
   debug: 1
 --- !u!4 &315619412952882539
 Transform:
@@ -2904,6 +2901,10 @@ MonoBehaviour:
   PerformingAction: 0
   NumberOfActions: 10
   debug: 0
+  inputController: {fileID: 315619412952882538}
+  inputVisualizer: {fileID: 1696108100}
+  playerController: {fileID: 1553832830}
+  pauseMenuController: {fileID: 218920369}
 --- !u!4 &315619414494361724
 Transform:
   m_ObjectHideFlags: 0

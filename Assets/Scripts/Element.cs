@@ -7,6 +7,7 @@ public class Element : MonoBehaviour {
 	private Action action;
 	public bool doesntHaveAction;
 	public bool debug;
+
 	private void Start() {
 		if (debug) StartChecks();
 		action = GetComponent<Action>();
