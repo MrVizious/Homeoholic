@@ -48,7 +48,8 @@ Here there will be listed all the things that have to be done not necessarily in
 ## Code
 Ok, so you don't know what to code? Look in here, it should help you find something cool to do ;)
 - [x] Pause Menu
-- [ ] Start Menu 
+- [ ] Start Menu
+- [ ] Reload room if not completed
 - [ ] Letters UI
   - [x] LetterHolders appear automatically with correct size
   - [x] Letters appear when pressed
